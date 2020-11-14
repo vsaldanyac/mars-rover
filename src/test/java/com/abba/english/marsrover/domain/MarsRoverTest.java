@@ -26,6 +26,6 @@ public class MarsRoverTest {
 
   @Test
   public void shouldTransmitSimpleTextTest() {
-    assertEquals(marsRover.move(), "Movement order received");
+    assertEquals(marsRover.transmitText("Sample Text"), "Sample Text");
   }
 }
