@@ -74,7 +74,7 @@ public class MarsRoverControllerTest {
         );
     String resultString = resultActions.andReturn().getResponse().getContentAsString();
     JacksonJsonParser jsonParser = new JacksonJsonParser();
-    Assert.assertEquals(jsonParser.parseMap(resultString).get("message").toString(), "Movement order received");
+    Assert.assertEquals(jsonParser.parseMap(resultString).get("id").toString(), "1");
   }
 
   @Test

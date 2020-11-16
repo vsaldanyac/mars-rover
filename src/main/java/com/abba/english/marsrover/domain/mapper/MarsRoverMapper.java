@@ -14,4 +14,8 @@ public interface MarsRoverMapper {
 
   @Mapping(target = "location", expression="java(new com.abba.english.marsrover.domain.Location(marsRoverDAO.getLocationX(), marsRoverDAO.getLocationY()))")
   MarsRover map(MarsRoverDAO marsRoverDAO);
+
+  @Mapping(target = "locationX", expression = "java(marsRover.getLocation().getX())")
+  @Mapping(target = "locationY", expression = "java(marsRover.getLocation().getY())")
+  MarsRoverDAO map(MarsRover marsRover);
 }

@@ -9,6 +9,7 @@ public class MarsRover implements Vehicle {
     this.location = new Location(0,0);
   }
 
+  Long id;
   Location location;
 
   @Override

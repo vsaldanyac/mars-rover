@@ -24,7 +24,7 @@ public class MarsRoverController {
 
   @PutMapping(value = "{id}/move", produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<?> moveMarsRover(@PathVariable Long id, @RequestParam int distance, @RequestParam int angle) {
-    return ResponseEntity.ok(new StringResponse(marsRoverService.move(id, distance, angle)));
+    return ResponseEntity.ok(marsRoverService.move(id, distance, angle));
   }
 
   @PutMapping(value = "{id}/charge", produces = MediaType.APPLICATION_JSON_VALUE)

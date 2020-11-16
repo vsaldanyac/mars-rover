@@ -1,6 +1,7 @@
 package com.abba.english.marsrover.Service;
 
 import com.abba.english.marsrover.Service.impl.MarsRoverServiceImpl;
+import com.abba.english.marsrover.domain.MarsRover;
 import com.abba.english.marsrover.repository.MarsRoverRepository;
 import com.abba.english.marsrover.repository.dao.MarsRoverDAO;
 import org.junit.Assert;
@@ -35,7 +36,7 @@ public class MarsRoverServiceTest {
   @Test
   public void shouldReturnMoveMessageOnOrderMoveTest() {
     Mockito.when(marsRoverRepository.findById(any(Long.class))).thenReturn(Optional.of(new MarsRoverDAO()));
-    Assert.assertEquals(marsRoverService.move(1L, 0, 0), "Movement order received");
+    Assert.assertEquals(marsRoverService.move(1L, 0, 0), new MarsRover());
   }
 
   @Test

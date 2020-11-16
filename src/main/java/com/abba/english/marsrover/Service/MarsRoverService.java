@@ -1,5 +1,6 @@
 package com.abba.english.marsrover.Service;
 
+import com.abba.english.marsrover.domain.MarsRover;
 import com.abba.english.marsrover.exception.NoTextsToTransmitException;
 
 public interface MarsRoverService {
@@ -8,7 +9,7 @@ public interface MarsRoverService {
 
   String transmitText(Long id, String text);
 
-  String move(Long id, int distance, int angle);
+  MarsRover move(Long id, int distance, int angle);
 
   String transmitRandomText(Long id) throws NoTextsToTransmitException;
 }
