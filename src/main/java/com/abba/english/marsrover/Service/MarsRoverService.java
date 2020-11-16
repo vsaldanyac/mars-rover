@@ -3,6 +3,9 @@ package com.abba.english.marsrover.Service;
 import com.abba.english.marsrover.domain.MarsRover;
 import com.abba.english.marsrover.exception.NoTextsToTransmitException;
 
+/**
+ * @author VSaldanya
+ */
 public interface MarsRoverService {
 
   String chargeBatteries(Long id);

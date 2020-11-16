@@ -6,6 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+/**
+ * @author VSaldanya
+ */
 @Data
 @Entity(name = "MarsRover")
 public class MarsRoverDAO {

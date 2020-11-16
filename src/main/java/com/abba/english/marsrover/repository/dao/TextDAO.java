@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+/**
+ * @author VSaldanya
+ */
 @Data
 @Entity(name = "Messages")
 public class TextDAO {

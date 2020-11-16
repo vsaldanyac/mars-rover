@@ -1,5 +1,8 @@
 package com.abba.english.marsrover.domain;
 
+/**
+ * @author VSaldanya
+ */
 public class Mover {
   public Location moveMarsRover(Location initLocation, int distance, int angle) {
     Location newLocation = new Location();

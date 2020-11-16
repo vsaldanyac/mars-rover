@@ -6,6 +6,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * @author VSaldanya
+ */
 @Repository
 public interface TextRepository extends CrudRepository<TextDAO, Long> {
 

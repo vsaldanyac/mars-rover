@@ -2,11 +2,15 @@ package com.abba.english.marsrover.domain;
 
 import lombok.Data;
 
+/**
+ *
+ * @author VSaldanya
+ */
 @Data
 public class MarsRover implements Vehicle {
 
   public MarsRover() {
-    this.location = new Location(0,0);
+    this.location = new Location(0, 0);
   }
 
   Long id;
