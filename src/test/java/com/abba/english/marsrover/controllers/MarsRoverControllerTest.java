@@ -33,7 +33,9 @@ public class MarsRoverControllerTest {
 
   @Test
   public void shouldExistEndpointForMovingTest() throws Exception {
-    this.mockMvc.perform(put("/v1/mars-rover/move"))
+    this.mockMvc.perform(put("/v1/mars-rover/move")
+        .param("distance", "0")
+        .param("angle", "0"))
         .andExpect(status().is2xxSuccessful()
         );
   }
@@ -65,7 +67,9 @@ public class MarsRoverControllerTest {
 
   @Test
   public void shouldReturnMessageMovementTest() throws Exception {
-    ResultActions resultActions = this.mockMvc.perform(put("/v1/mars-rover/move"))
+    ResultActions resultActions = this.mockMvc.perform(put("/v1/mars-rover/move")
+        .param("distance", "0")
+        .param("angle", "0"))
         .andExpect(status().is2xxSuccessful()
         );
     String resultString = resultActions.andReturn().getResponse().getContentAsString();

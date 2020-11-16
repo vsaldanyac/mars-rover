@@ -2,6 +2,7 @@ package com.abba.english.marsrover.Service.impl;
 
 import com.abba.english.marsrover.Service.MarsRoverService;
 import com.abba.english.marsrover.domain.MarsRover;
+import com.abba.english.marsrover.domain.Mover;
 import com.abba.english.marsrover.exception.NoTextsToTransmitException;
 import com.abba.english.marsrover.repository.TextRepository;
 import com.abba.english.marsrover.repository.dao.TextDAO;
@@ -34,8 +35,9 @@ public class MarsRoverServiceImpl implements MarsRoverService {
   }
 
   @Override
-  public String move() {
-    return marsRover.move();
+  public String move(int distance, int angle) {
+    Mover mover = new Mover();
+    return marsRover.move(mover.moveMarsRover(marsRover.getLocation(), distance, angle));
   }
 
   @Override

@@ -8,7 +8,7 @@ public interface MarsRoverService {
 
   String transmitText(String text);
 
-  String move();
+  String move(int distance, int angle);
 
   String transmitRandomText() throws NoTextsToTransmitException;
 }

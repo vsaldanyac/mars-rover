@@ -2,7 +2,7 @@ package com.abba.english.marsrover.domain;
 
 public interface Vehicle {
 
-  String move();
+  String move(Location locationTO);
 
   String chargeBatteries();
 

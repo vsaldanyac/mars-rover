@@ -23,8 +23,8 @@ public class MarsRoverController {
   }
 
   @PutMapping(value = "/move", produces = MediaType.APPLICATION_JSON_VALUE)
-  public ResponseEntity<?> moveMarsRover() {
-    return ResponseEntity.ok(new StringResponse(marsRoverService.move()));
+  public ResponseEntity<?> moveMarsRover(@RequestParam int distance, @RequestParam int angle) {
+    return ResponseEntity.ok(new StringResponse(marsRoverService.move(distance, angle)));
   }
 
   @PutMapping(value = "/charge", produces = MediaType.APPLICATION_JSON_VALUE)

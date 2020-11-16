@@ -1,7 +1,6 @@
 package com.abba.english.marsrover.Service;
 
 import com.abba.english.marsrover.Service.impl.MarsRoverServiceImpl;
-import com.abba.english.marsrover.domain.MarsRover;
 import com.abba.english.marsrover.exception.NoTextsToTransmitException;
 import com.abba.english.marsrover.repository.TextRepository;
 import org.junit.Assert;
@@ -36,7 +35,7 @@ public class MarsRoverServiceTest {
 
   @Test
   public void shouldReturnMoveMessageOnOrderMoveTest() {
-    Assert.assertEquals(marsRoverService.move(), "Movement order received");
+    Assert.assertEquals(marsRoverService.move(0, 0), "Movement order received");
   }
 
   @Test

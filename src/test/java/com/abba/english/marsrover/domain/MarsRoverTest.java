@@ -16,7 +16,7 @@ public class MarsRoverTest {
 
   @Test
   public void shouldReturnOrderReceivedTest() {
-    assertEquals(marsRover.move(), "Movement order received");
+    assertEquals(marsRover.move(new Location()), "Movement order received");
   }
 
   @Test
