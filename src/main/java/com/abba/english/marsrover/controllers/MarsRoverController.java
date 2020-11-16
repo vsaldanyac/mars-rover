@@ -22,24 +22,24 @@ public class MarsRoverController {
     this.marsRoverService = marsRoverService;
   }
 
-  @PutMapping(value = "/move", produces = MediaType.APPLICATION_JSON_VALUE)
-  public ResponseEntity<?> moveMarsRover(@RequestParam int distance, @RequestParam int angle) {
-    return ResponseEntity.ok(new StringResponse(marsRoverService.move(distance, angle)));
+  @PutMapping(value = "{id}/move", produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<?> moveMarsRover(@PathVariable Long id, @RequestParam int distance, @RequestParam int angle) {
+    return ResponseEntity.ok(new StringResponse(marsRoverService.move(id, distance, angle)));
   }
 
-  @PutMapping(value = "/charge", produces = MediaType.APPLICATION_JSON_VALUE)
-  public ResponseEntity<?> chargeMarsRoverBatteries() {
-    return ResponseEntity.ok(new StringResponse(marsRoverService.chargeBatteries()));
+  @PutMapping(value = "{id}/charge", produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<?> chargeMarsRoverBatteries(@PathVariable Long id) {
+    return ResponseEntity.ok(new StringResponse(marsRoverService.chargeBatteries(id)));
   }
 
-  @PutMapping(value = "/transmit", produces = MediaType.APPLICATION_JSON_VALUE)
-  public ResponseEntity<?> transmitText(@RequestParam String text) {
-    return ResponseEntity.ok(new StringResponse(marsRoverService.transmitText(text)));
+  @PutMapping(value = "{id}/transmit", produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<?> transmitText(@PathVariable Long id, @RequestParam String text) {
+    return ResponseEntity.ok(new StringResponse(marsRoverService.transmitText(id, text)));
   }
 
-  @GetMapping(value = "/transmit-random", produces = MediaType.APPLICATION_JSON_VALUE)
-  public ResponseEntity<?> transmitRandomText() throws NoTextsToTransmitException {
-    return ResponseEntity.ok(new StringResponse(marsRoverService.transmitRandomText()));
+  @GetMapping(value = "{id}/transmit-random", produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<?> transmitRandomText(@PathVariable Long id) throws NoTextsToTransmitException {
+    return ResponseEntity.ok(new StringResponse(marsRoverService.transmitRandomText(id)));
   }
 
   class StringResponse {

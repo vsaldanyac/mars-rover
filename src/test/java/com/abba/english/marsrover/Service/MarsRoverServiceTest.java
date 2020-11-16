@@ -30,17 +30,17 @@ public class MarsRoverServiceTest {
   @Test(expected = NoTextsToTransmitException.class)
   public void shouldReturnExceptionOnTransmitRandomTextWhenDontExistTest() {
     Mockito.when(textRepository.findAll()).thenReturn(new ArrayList<>());
-    marsRoverService.transmitRandomText();
+    marsRoverService.transmitRandomText(1L);
   }
 
   @Test
   public void shouldReturnMoveMessageOnOrderMoveTest() {
-    Assert.assertEquals(marsRoverService.move(0, 0), "Movement order received");
+    Assert.assertEquals(marsRoverService.move(1L,0, 0), "Movement order received");
   }
 
   @Test
   public void shouldReturnChargeBatteriesMessageOnOrderChargeTest() {
-    Assert.assertEquals(marsRoverService.chargeBatteries(), "Charge Batteries order received");
+    Assert.assertEquals(marsRoverService.chargeBatteries(1L), "Charge Batteries order received");
   }
 
 }

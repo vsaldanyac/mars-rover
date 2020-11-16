@@ -4,11 +4,11 @@ import com.abba.english.marsrover.exception.NoTextsToTransmitException;
 
 public interface MarsRoverService {
 
-  String chargeBatteries();
+  String chargeBatteries(Long id);
 
-  String transmitText(String text);
+  String transmitText(Long id, String text);
 
-  String move(int distance, int angle);
+  String move(Long id, int distance, int angle);
 
-  String transmitRandomText() throws NoTextsToTransmitException;
+  String transmitRandomText(Long id) throws NoTextsToTransmitException;
 }

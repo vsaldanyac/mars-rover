@@ -33,7 +33,7 @@ public class MarsRoverControllerTest {
 
   @Test
   public void shouldExistEndpointForMovingTest() throws Exception {
-    this.mockMvc.perform(put("/v1/mars-rover/move")
+    this.mockMvc.perform(put("/v1/mars-rover/1/move")
         .param("distance", "0")
         .param("angle", "0"))
         .andExpect(status().is2xxSuccessful()
@@ -42,14 +42,14 @@ public class MarsRoverControllerTest {
 
   @Test
   public void shouldExistEndpointForChargeBatteriesTest() throws Exception {
-    this.mockMvc.perform(put("/v1/mars-rover/charge"))
+    this.mockMvc.perform(put("/v1/mars-rover/1/charge"))
         .andExpect(status().is2xxSuccessful()
         );
   }
 
   @Test
   public void shouldExistEndpointForTransmitText() throws Exception {
-    this.mockMvc.perform(put("/v1/mars-rover/transmit")
+    this.mockMvc.perform(put("/v1/mars-rover/1/transmit")
         .param("text", "First text to transmit"))
         .andExpect(status().is2xxSuccessful()
         );
@@ -57,7 +57,7 @@ public class MarsRoverControllerTest {
 
   @Test
   public void shouldReturnMessageChargingBatteriesTest() throws Exception {
-    ResultActions resultActions = this.mockMvc.perform(put("/v1/mars-rover/charge"))
+    ResultActions resultActions = this.mockMvc.perform(put("/v1/mars-rover/1/charge"))
         .andExpect(status().is2xxSuccessful()
         );
     String resultString = resultActions.andReturn().getResponse().getContentAsString();
@@ -67,7 +67,7 @@ public class MarsRoverControllerTest {
 
   @Test
   public void shouldReturnMessageMovementTest() throws Exception {
-    ResultActions resultActions = this.mockMvc.perform(put("/v1/mars-rover/move")
+    ResultActions resultActions = this.mockMvc.perform(put("/v1/mars-rover/1/move")
         .param("distance", "0")
         .param("angle", "0"))
         .andExpect(status().is2xxSuccessful()
@@ -79,7 +79,7 @@ public class MarsRoverControllerTest {
 
   @Test
   public void shouldReturnTextTransmitTest() throws Exception {
-    ResultActions resultActions = this.mockMvc.perform(put("/v1/mars-rover/transmit")
+    ResultActions resultActions = this.mockMvc.perform(put("/v1/mars-rover/1/transmit")
         .param("text", "First text to transmit"))
         .andExpect(status().is2xxSuccessful()
         );
@@ -90,11 +90,11 @@ public class MarsRoverControllerTest {
 
   @Test
   public void shouldExistEndpointForTransmitRandomText() throws Exception {
-    this.mockMvc.perform(put("/v1/mars-rover/transmit")
+    this.mockMvc.perform(put("/v1/mars-rover/1/transmit")
         .param("text", "First text to transmit"))
         .andExpect(status().is2xxSuccessful()
         );
-    this.mockMvc.perform(get("/v1/mars-rover/transmit-random"))
+    this.mockMvc.perform(get("/v1/mars-rover/1/transmit-random"))
         .andExpect(status().is2xxSuccessful()
         );
   }

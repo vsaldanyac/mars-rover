@@ -30,18 +30,18 @@ public class MarsRoverServiceImpl implements MarsRoverService {
   }
 
   @Override
-  public String chargeBatteries() {
+  public String chargeBatteries(Long id) {
     return marsRover.chargeBatteries();
   }
 
   @Override
-  public String move(int distance, int angle) {
+  public String move(Long id, int distance, int angle) {
     Mover mover = new Mover();
     return marsRover.move(mover.moveMarsRover(marsRover.getLocation(), distance, angle));
   }
 
   @Override
-  public String transmitText(String text) {
+  public String transmitText(Long id, String text) {
     TextDAO textDAO = new TextDAO();
     textDAO.setText(text);
     marsRover.transmitText(text);
@@ -49,7 +49,7 @@ public class MarsRoverServiceImpl implements MarsRoverService {
   }
 
   @Override
-  public String transmitRandomText() throws NoTextsToTransmitException {
+  public String transmitRandomText(Long id) throws NoTextsToTransmitException {
     String textToTransmit = getRandomTextFromList(findAllText());
     marsRover.transmitText(textToTransmit);
     return textToTransmit;
